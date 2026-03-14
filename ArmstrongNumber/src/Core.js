@@ -23,4 +23,6 @@ function isArmstrong(number) {
   }
 
   return result === check;
-}
+};
+
+export default isArmstrong;

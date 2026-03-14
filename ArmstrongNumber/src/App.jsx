@@ -2,17 +2,23 @@
 import { useState } from 'react';
 import './App.css'
 
+import isArmstrong from './Armstrong';
+
 function App() {
 
     const[text,setText]= useState("");
     const[display,setDisplay]=useState("");
-    const handleadd =()=>{
-      setDisplay(text);
+    const handleSubmit =() => {   
+      let result = isArmstrong(text);
+      setDisplay(result ? "Armstrong Number" : "Not a Armstrong Number");
     };
-    const handleClear=()=>{
+
+
+    const handleClear = () => {
       setText("");
       setDisplay("");
     };
+
   return (
    <>
     <h1>ArmStrongNumber</h1>
@@ -23,8 +29,8 @@ function App() {
       />
       <br/>
       <br/>
-      <button onClick={handleadd}>Clear</button>
-      <button onClick={handleClear}>Submit</button>
+      <button onClick={handleClear}>Clear</button>
+      <button onClick={handleSubmit}>Submit</button>
     </div>
     <div className='result'>
       {display}
