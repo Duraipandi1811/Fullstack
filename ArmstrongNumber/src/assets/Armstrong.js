@@ -10,7 +10,6 @@ function isArmstrong(number) {
     count++;
   }
 
-  // calculate power sum
   while (temp > 0) {
     let lastDigit = temp % 10;
     let mul = 1;
